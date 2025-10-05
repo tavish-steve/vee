@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vee</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: pink;
+        text-align: center;
+        font-size: 36px;
+        margin-top: 20px;
+
+    }
+    p {
+        color: pink;
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 20px;
+        text-align: justify;
+        width: 1000px;
+        text-align: center;
+        margin-left: 70px;
+        font-style: oblique;
+    }
+    img {
+        margin: 20px auto;
+        max-width: 90%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 200px;
+    
+  width: 400px; /* Adjust image size as needed */
+  height: 400px;
+  object-fit: cover; /* Ensures the image covers the heart shape */
+  clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Main triangular part of the heart */
+  /* For the rounded top parts, you can use mask properties as a fallback or in conjunction */
+  /* Fallback for older browsers or for more precise control over the rounded top */
+  -webkit-mask: 
+    radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+    radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+    linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+  mask: 
+    radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+    radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+    linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        background-color: rgba(255, 192, 203, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+        position: relative;
+        z-index: 1;
+        
+        
+    }
+    
+
+
+</style>
+
+
+<body>
+    <div class="container">
+        <h1>Mi Amigo</h1>
+        <p>Mi amigo es muy bueno
+            I'm so lucky to have a friend who understands me like you do. There's a comfort in knowing I can be 100%
+            myself around you, without fear. You've seen me at my best and at my worst, and you've loved me
+            through it all. Thank you for making me feel seen, heard, and accepted for exactly who I am.
+        </p>
+        <img src="vee1.jpg" alt="">
+        <img src="vee2.jpg" alt="">
+        <img src="vee3.jpg" alt="">
+        <img src="vee4.jpg" alt="">
+        <img src="vee5.jpg" alt="">
+        <p class="typed-text">
+            Your friendship is a true gift, and I cherish every moment we spend together. Whether we're laughing
+            until our sides hurt, sharing deep conversations, or simply enjoying each other's company in silence,
+            I feel incredibly grateful to have you in my life. Thank you for being the amazing friend that you are.
+            Here's to many more adventures and memories together!
+        </p>
+    </div>
+    <script>
+        // Create stars and animate them emerging from the background
+        const numStars = 80;
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.style.position = 'fixed';
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.width = `${Math.random() * 2 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.background = 'white';
+            star.style.borderRadius = '50%';
+            star.style.opacity = 0;
+            star.style.pointerEvents = 'none';
+            star.style.zIndex = 0;
+            star.style.boxShadow = `0 0 8px 2px #fff8, 0 0 20px 4px #ffb6c1aa`;
+            document.body.appendChild(star);
+
+            // Animate star fade-in and twinkle
+            setTimeout(() => {
+            star.style.transition = 'opacity 2s';
+            star.style.opacity = Math.random() * 0.7 + 0.3;
+            }, Math.random() * 2000);
+
+            // Twinkle effect
+            setInterval(() => {
+            star.style.opacity = Math.random() * 0.7 + 0.3;
+            }, 2000 + Math.random() * 2000);
+        }
+        function animateStars() {
+            const stars = document.querySelectorAll('body > div[style*="border-radius"]');
+            stars.forEach((star, i) => {
+                // Get current position
+                let top = parseFloat(star.style.top);
+                let left = parseFloat(star.style.left);
+
+                // Move stars slowly downward and slightly sideways
+                top += 0.03 + Math.sin(Date.now() / 1000 + i) * 0.01;
+                left += Math.sin(Date.now() / 1500 + i) * 0.02;
+
+                // Wrap around if out of bounds
+                if (top > 100) top = 0;
+                if (left > 100) left = 0;
+                if (left < 0) left = 100;
+
+                star.style.top = `${top}vh`;
+                star.style.left = `${left}vw`;
+            });
+            requestAnimationFrame(animateStars);
+        }
+        animateStars();
+        const numHearts = 20;
+        for (let i = 0; i < numHearts; i++) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.style.position = 'fixed';
+            heart.style.top = `${Math.random() * 100}vh`;
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.fontSize = `${Math.random() * 24 + 18}px`;
+            heart.style.color = 'pink';
+            heart.style.opacity = 0;
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = 1;
+            heart.style.filter = 'drop-shadow(0 0 8px #ffb6c1)';
+            document.body.appendChild(heart);
+
+            // Animate heart fade-in
+            setTimeout(() => {
+                heart.style.transition = 'opacity 2s';
+                heart.style.opacity = Math.random() * 0.6 + 0.4;
+            }, Math.random() * 2000);
+
+            // Twinkle effect
+            setInterval(() => {
+                heart.style.opacity = Math.random() * 0.6 + 0.4;
+            }, 2500 + Math.random() * 2000);
+        }
+
+        function animateHearts() {
+            const hearts = Array.from(document.querySelectorAll('body > div'))
+                .filter(div => div.innerHTML === '❤');
+            hearts.forEach((heart, i) => {
+                let top = parseFloat(heart.style.top);
+                let left = parseFloat(heart.style.left);
+
+                // Move hearts slowly upward and sideways
+                top -= 0.015 + Math.cos(Date.now() / 1200 + i) * 0.01;
+                left += Math.sin(Date.now() / 1800 + i) * 0.03;
+
+                // Wrap around if out of bounds
+                if (top < 0) top = 100;
+                if (left > 100) left = 0;
+                if (left < 0) left = 100;
+
+                heart.style.top = `${top}vh`;
+                heart.style.left = `${left}vw`;
+            });
+            requestAnimationFrame(animateHearts);
+        }
+        animateHearts();
+        const paragraph = document.querySelector('p');
+        const originalText = paragraph.textContent;
+        paragraph.textContent = '';
+        const words = originalText.split(' ');
+        let wordIndex = 0;
+
+        function typeWord() {
+            if (wordIndex < words.length) {
+                paragraph.textContent += (wordIndex === 0 ? '' : ' ') + words[wordIndex];
+                wordIndex++;
+                setTimeout(typeWord, 200);
+            }
+        }
+        typeWord();
+        const images = Array.from(document.querySelectorAll('.container img'));
+        let currentImg = 0;
+
+        // Hide all images initially
+        images.forEach(img => img.style.display = 'none');
+
+        // Show the first image
+        if (images.length > 0) images[0].style.display = 'block';
+
+        setInterval(() => {
+            images[currentImg].style.display = 'none';
+            currentImg = (currentImg + 1) % images.length;
+            images[currentImg].style.display = 'block';
+        }, 30000);
+        const typedParagraph = document.querySelector('.typed-text');
+        const typedText = typedParagraph.textContent;
+        typedParagraph.textContent = '';
+        let charIndex = 0;
+
+        function typeChar() {
+            if (charIndex < typedText.length) {
+                typedParagraph.textContent += typedText[charIndex];
+                charIndex++;
+                setTimeout(typeChar, 40);
+            }
+        }
+        typeChar();
+        
+    </script>
+
+
+</body>
+
+</html>
