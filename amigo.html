@@ -12,6 +12,19 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        max-width: 1500px;
+        box-sizing: border-box;
+        min-height: 100vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+        
+
     }
     h1 {
         color: pink;
@@ -56,16 +69,17 @@
 
     }
     .container {
-        max-width: 1200px;
+        max-width: 1500px;
         margin: auto;
         padding: 20px;
         background-color: rgba(255, 192, 203, 0.1);
-        border-radius: 10px;
+        
         box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
         position: relative;
         z-index: 1;
-        
-        
+        width: 100%;
+
+
     }
     
 
@@ -234,6 +248,8 @@
             }
         }
         typeChar();
+        
+        
         
     </script>
 
