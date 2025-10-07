@@ -12,9 +12,9 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        max-width: 1500px;
 
-        max-width: 1500px;
+
+        max-width: 1220px;
         box-sizing: border-box;
         min-height: 100vh;
         width: 100%;
@@ -24,7 +24,7 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        width: 100vw;
+        width: clamp( 500px, 100vw, 1220px);
         
 
     }
@@ -34,31 +34,30 @@
         font-size: 36px;
         margin-top: 20px;
         text-shadow: 0 0 8px #ffb6c1, 0 0 16px #ffb6c1aa;
+        font-family: 'Brush Script MT', cursive;
+        font-weight: bold;
 
     }
     p {
         color: pink;
         font-size: 18px;
         line-height: 1.6;
-        margin: 20px;
+        margin: 10px;
         text-align: justify;
-        width: 900px;
+        width: clamp(400px, 10vw, 1220px);
         text-align: center;
         margin-left: 70px;
         font-style: oblique;
     }
     img {
         margin: 20px auto;
-        max-width: 90%;
-        height: auto;
+        height: clamp(100px, 50vh, 400px);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        width: 200px;
-    
-  width: 400px; /* Adjust image size as needed */
-  height: 400px;
-  object-fit: cover; /* Ensures the image covers the heart shape */
-  clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Main triangular part of the heart */
+        width: clamp(100px, 100vw, 400px);
+        height: 400px;
+        object-fit: cover; /* Ensures the image covers the heart shape */
+        clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Main triangular part of the heart */
   /* For the rounded top parts, you can use mask properties as a fallback or in conjunction */
   /* Fallback for older browsers or for more precise control over the rounded top */
   -webkit-mask: 
@@ -72,8 +71,7 @@
 
     }
     .container {
-        max-width: 1500px;
-        max-width: 1500px;
+        width: clamp(500px, 100vw, 1000px);
         margin: auto;
         padding: 20px;
         background-color: rgba(255, 192, 203, 0.1);
@@ -89,12 +87,17 @@
     }
     
 
+    
+
+    
+
 
 </style>
 
 
 <body>
     <div class="container">
+        
         <h1>Mi Amigo</h1>
         <p>Mi amigo es muy bueno
             I'm so lucky to have a friend who understands me like you do. There's a comfort in knowing I can be 100%
@@ -112,7 +115,9 @@
             I feel incredibly grateful to have you in my life. Thank you for being the amazing friend that you are.
             Here's to many more adventures and memories together!
         </p>
+        
     </div>
+  
     <script>
         // Create stars and animate them emerging from the background
         const numStars = 80;
