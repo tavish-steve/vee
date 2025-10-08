@@ -24,10 +24,11 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        width: clamp( 500px, 100vw, 1220px);
-        
+        width: clamp(500px, 100vw, 1220px);
+
 
     }
+
     h1 {
         color: pink;
         text-align: center;
@@ -38,6 +39,7 @@
         font-weight: bold;
 
     }
+
     p {
         color: pink;
         font-size: 18px;
@@ -49,6 +51,7 @@
         margin-left: 70px;
         font-style: oblique;
     }
+
     img {
         margin: 20px auto;
         height: clamp(100px, 50vh, 400px);
@@ -56,28 +59,31 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         width: clamp(100px, 100vw, 400px);
         height: 400px;
-        object-fit: cover; /* Ensures the image covers the heart shape */
-        clip-path: polygon(-41% 0, 50% 91%, 141% 0); /* Main triangular part of the heart */
-  /* For the rounded top parts, you can use mask properties as a fallback or in conjunction */
-  /* Fallback for older browsers or for more precise control over the rounded top */
-  -webkit-mask: 
-    radial-gradient(at 70% 31%, #000 29%, #0000 30%),
-    radial-gradient(at 30% 31%, #000 29%, #0000 30%),
-    linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
-  mask: 
-    radial-gradient(at 70% 31%, #000 29%, #0000 30%),
-    radial-gradient(at 30% 31%, #000 29%, #0000 30%),
-    linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+        object-fit: cover;
+        /* Ensures the image covers the heart shape */
+        clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+        /* Main triangular part of the heart */
+        /* For the rounded top parts, you can use mask properties as a fallback or in conjunction */
+        /* Fallback for older browsers or for more precise control over the rounded top */
+        -webkit-mask:
+            radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+            radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+        mask:
+            radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+            radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
 
     }
+
     .container {
         width: clamp(500px, 100vw, 1000px);
         margin: auto;
         padding: 20px;
         background-color: rgba(255, 192, 203, 0.1);
-        
+
         box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
-    
+
         z-index: 1;
 
         width: 100%;
@@ -85,19 +91,37 @@
 
 
     }
-    
+    button {
+        background-color: pink;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+        margin: 20px auto;
+        display: block;
+        width: 200px;
+        border-radius: 40px;
 
-    
+    }
+    audio{
+        margin-top: 8px;
+        width: 150px;
+        outline: none;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+        height: 40px;
+    }
 
-    
-
-
+   
 </style>
 
 
 <body>
     <div class="container">
-        
+
         <h1>Mi Amigo</h1>
         <p>Mi amigo es muy bueno
             I'm so lucky to have a friend who understands me like you do. There's a comfort in knowing I can be 100%
@@ -115,9 +139,18 @@
             I feel incredibly grateful to have you in my life. Thank you for being the amazing friend that you are.
             Here's to many more adventures and memories together!
         </p>
-        
+        <button>Music
+        <audio controls>
+            <source src="Billie Eilish - Ocean Eyes (Official Music Video) - 128.mp3">
+
+            </audio>
+            </button>
+            
+
+     
+
     </div>
-  
+
     <script>
         // Create stars and animate them emerging from the background
         const numStars = 80;
@@ -138,13 +171,13 @@
 
             // Animate star fade-in and twinkle
             setTimeout(() => {
-            star.style.transition = 'opacity 2s';
-            star.style.opacity = Math.random() * 0.7 + 0.3;
+                star.style.transition = 'opacity 2s';
+                star.style.opacity = Math.random() * 0.7 + 0.3;
             }, Math.random() * 2000);
 
             // Twinkle effect
             setInterval(() => {
-            star.style.opacity = Math.random() * 0.7 + 0.3;
+                star.style.opacity = Math.random() * 0.7 + 0.3;
             }, 2000 + Math.random() * 2000);
         }
         function animateStars() {
@@ -262,13 +295,13 @@
         images.forEach(img => {
             img.style.boxShadow = '0 8px 24px 6px #ffb6c1cc, 0 2px 16px 4px #fff8';
         });
-        
-        
-        
-        
-        
-    </script>
 
+
+
+
+
+    </script>
+  
 
 </body>
 
